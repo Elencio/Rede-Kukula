@@ -1,9 +1,11 @@
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./Router";
+
 
 export function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <span>Lets do it</span>
-    </div>
+   <BrowserRouter>
+      <Router />   
+   </BrowserRouter>
   )
 }
