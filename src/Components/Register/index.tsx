@@ -6,12 +6,8 @@ export function Register() {
     <PrincipalContainer>
       <FormContainer >
         <form action="#">
-              <h1>Create Account</h1>
-              <div className="social-container">
-                <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-              </div>
+              <h1>Register sua conta</h1>
+           
               <input type="text" placeholder="Name" required />
               <input type="email" placeholder="Email" required />
               <input type="password" placeholder="Password" required />

@@ -9,8 +9,7 @@ export const PrincipalContainer = styled.div `
   
   
 h1 {
-	font-weight: bold;
-	margin: 0;
+	margin-bottom: 1rem;
  }
 
 h2 {
@@ -39,8 +38,8 @@ a {
 button {
 	margin-top: 1rem;
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #1c2e4a;
+	background-color: #1c2e4a;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -102,6 +101,10 @@ export const FormContainer = styled.div`
 	border-left: 1px solid #000;
 	border-bottom: 1px solid #000;
 	transition: all 0.6s ease-in-out;
+
+	h1 {
+		font-family: Roboto, sans-serif;
+	}
 `
 
 export const OverlayContainer = styled.div`
@@ -119,8 +122,8 @@ export const OverlayContainer = styled.div`
 
 export const Overlay= styled.div`
 	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: -webkit-linear-gradient(to right, #99ee99, #23395d);
+	background: linear-gradient(to right, #99ee99, #23395d);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
