@@ -1,12 +1,13 @@
 import {Route, Routes} from 'react-router-dom'
-import { Login } from './Components/Login'
 import { Register } from './Components/Register'
+import { Login } from './Components/Login'
+
 
 export function Router(){
   return (
     <Routes>
       <Route path='/' element={<Login />}/>
-      <Route path='/Register' element={<Register />}/>
+      <Route path='/register' element={<Register />}/>
     </Routes>
   )
 }

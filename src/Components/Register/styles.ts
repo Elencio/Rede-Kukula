@@ -1,14 +1,11 @@
 import styled from 'styled-components'
 
 export const PrincipalContainer = styled.div `
-  background: #f6f5f7;
 	display: flex;
   flex-direction: row;
 	justify-content: center;
 	align-items: center;
-  padding: 6rem;
 	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
   
   
 h1 {
@@ -40,6 +37,7 @@ a {
 }
 
 button {
+	margin-top: 1rem;
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
@@ -50,6 +48,8 @@ button {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+
+	    
 }
 
 button:active {
@@ -57,7 +57,8 @@ button:active {
 }
 
 button:focus {
-	outline: none;
+	outline: 0;
+	box-shadow: 0 0 0 2px #90ee90;
 }
 
 button.ghost {
@@ -79,22 +80,38 @@ form {
 input {
 	background-color: #eee;
 	border: none;
+	border-radius: 2px;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
 }
 
+input:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px #339933;
+    }
+
 `
 
 export const FormContainer = styled.div`
-  width: 40rem;
-	height: 100%;
+ 	width: 30rem;
+	height: 40rem;
+	border-top-left-radius: 12px solid #ff0000;
+	overflow: hidden;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
 	transition: all 0.6s ease-in-out;
 `
 
 export const OverlayContainer = styled.div`
-	width: 40rem;
-	height: 100%;
+		width: 30rem;
+	height: 40rem;
+	border-top-left-radius: 12px solid #ff0000;
+	overflow: hidden;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
 	overflow: hidden;
 	transition: transform 0.6s ease-in-out;
 

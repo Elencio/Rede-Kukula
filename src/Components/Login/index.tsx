@@ -1,71 +1,54 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+
+import { GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
+
+import { GoogleLogo, GraduationCap} from 'phosphor-react'
+
 import { FormContainer, Overlay, OverlayContainer, OverlayFix, PrincipalContainer, SocialContainer } from './styles';
+
+import { auth } from '../../services/firebase';
 
 
 export function Login() {
-  const [isSignUp, setIsSignUp] = useState(false);
+  
+  const [userdata, setUserData] = useState<User>({} as User);
 
-  const handleSignUpClick = () => {
-    setIsSignUp(true);
-  };
+ function handleEntrarUsandoGoogle(){
+   const provider = new GoogleAuthProvider();
 
-  const handleSignInClick = () => {
-    setIsSignUp(false);
-  };
+   signInWithPopup( auth, provider).then((result) => {
+       setUserData(result.user)
+   }).catch((error) => {
+    console.log('Alguma Coisa Nao correr bem')
+   }
+   )
+ }
 
-  return (
+  return(
     <PrincipalContainer>
-      <FormContainer className={`form-container ${isSignUp ? 'sign-up-container' : 'sign-in-container'}`}>
+      <FormContainer >
         <form action="#">
-          {isSignUp ? (
-            <>
-              <h1>Create Account</h1>
-              <div className="social-container">
-                <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-              </div>
-              <span>or use your email for registration</span>
-              <input type="text" placeholder="Name" />
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <button>Sign Up</button>
-            </>
-          ) : (
-            <>
-              
-              <h1>Sign in</h1>
-              <SocialContainer>
-                <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
+              <h1>Rede Kukula</h1>
+              <SocialContainer onClick={handleEntrarUsandoGoogle}>
+                <span>Entrar com google</span>
+                <GoogleLogo size={24}  weight='fill'/>
               </SocialContainer>
-              <span>or use your account</span>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <a href="#">Forgot your password?</a>
-              <button>Sign In</button>
-            </>
-          )}
+              <span>ou usa a sua conta</span>
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
+              <a href="#">esqueceu sua senha?</a>
+              <button>Entrar</button>
         </form>
       </FormContainer>
       <OverlayContainer>
         <Overlay >
-          {isSignUp ? (
             <OverlayFix>
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" onClick={handleSignInClick}>Sign In</button>
+              <GraduationCap size={88} weight="fill" />
+              <h1>Bem vindo! A Rede Kukula Pabhodzi</h1>
+              <p>Junte-se a um conjuntos de Estudantes que buscam e sonham com um futuro melhor. Juntos crescemos e fazemos diferença </p>
             </OverlayFix>
-          ) : (
-            <>
-              <h1>Welcome Back!</h1>
-              <p>To keep connected with us please login with your personal info</p>
-              <button className="ghost" onClick={handleSignUpClick}>Sign Up</button>
-            </>
-          )}
         </Overlay>
       </OverlayContainer>
     </PrincipalContainer>
   )
-}
+}  

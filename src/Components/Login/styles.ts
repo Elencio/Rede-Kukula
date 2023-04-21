@@ -1,15 +1,12 @@
 import styled from 'styled-components'
 
 export const PrincipalContainer = styled.div `
-  background: #f6f5f7;
 	display: flex;
   flex-direction: row;
+	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
-  padding: 6rem;
 	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-  
   
 h1 {
 	font-weight: bold;
@@ -41,8 +38,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #1c2e4a;
+	background-color: #1c2e4a;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -56,9 +53,7 @@ button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
-	outline: none;
-}
+
 
 button.ghost {
 	background-color: transparent;
@@ -79,31 +74,52 @@ form {
 input {
 	background-color: #eee;
 	border: none;
+  border-radius: 2px;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
 }
+input:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px #339933;
+    }
 
 `
 
 export const FormContainer = styled.div`
-  width: 40rem;
-	height: 100%;
+  width: 30rem;
+	height: 40rem;
+	border-radius: 12px;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
 	transition: all 0.6s ease-in-out;
+
+	h1 {
+		font-size: 2rem;
+		font-family: Rubik, sans-serif;
+		font-weight: 500;
+		line-height: 1.7;
+		letter-spacing: 0.5px;
+	}
 `
 
 export const OverlayContainer = styled.div`
-	width: 40rem;
-	height: 100%;
+	width: 30rem;
+	height: 40rem;
+	border-radius: 12px solid #ff0000;
 	overflow: hidden;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
 	transition: transform 0.6s ease-in-out;
 
 `
 
 export const Overlay= styled.div`
 	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: -webkit-linear-gradient(to right, #99ee99, #23395d);
+	background: linear-gradient(to right, #99ee99, #23395d);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -118,19 +134,25 @@ export const Overlay= styled.div`
 	transition: transform 0.6s ease-in-out;
 `
 
-export const SocialContainer =styled.div`
-margin: 20px 0;
-
-a {
-  border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
+export const SocialContainer =styled.button`
+  margin: 2rem 0;
+	display: flex;
+	gap: 0.5rem;
 	justify-content: center;
 	align-items: center;
-	margin: 0 5px;
+	width: 300px;
 	height: 40px;
-	width: 40px;
-}
+
+	span {
+	font-family: Roboto, sans-serif;
+	font-size: 1rem;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+
+	
+	}
+
 `
 
 export const OverlayFix = styled.div`
@@ -145,4 +167,21 @@ export const OverlayFix = styled.div`
 	width: 50%;
 	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
+
+  h1{
+		font-size: 1rem;
+		font-family: Rubik, sans-serif;
+		font-weight: 500;
+		line-height: 1.7;
+		letter-spacing: 0.5px;
+	}
+	p {
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+	line-height: 1.7;
+	}
 `
