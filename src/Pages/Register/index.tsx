@@ -20,11 +20,11 @@ const DadosDeRegistroSchema = zod.object({
   zipCode: zod.string().min(5).max(10),
 });
 
-export type DadosDeRegistroDoUsuarioInterface = zod.infer<typeof DadosDeRegistroSchema>
+export type DadosDeRegistroDoUsuárioInterface = zod.infer<typeof DadosDeRegistroSchema>
 
 export function Register() {
   const [output, setOutput] = useState('')
-  const { register, reset, handleSubmit, formState: { errors } } = useForm<DadosDeRegistroDoUsuarioInterface>({
+  const { register, reset, handleSubmit, formState: { errors } } = useForm<DadosDeRegistroDoUsuárioInterface>({
     resolver: zodResolver(DadosDeRegistroSchema),
     defaultValues: {
       name:'',
