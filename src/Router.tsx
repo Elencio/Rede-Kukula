@@ -10,12 +10,9 @@ import { Challenges } from './Pages/ChallengesList'
 export function Router(){
   return (
     <Routes>
-      <Route path='/Login' element={<Login />}/>
-      <Route path='/Challenges' element={<Challenges />}/>
-      <Route path='/Usuario' element={<PerfilUsuario />}/>
-      <Route path='/register' element={<Register />}/>
       <Route path='/' element={<DefaultLayout/>}>
       <Route path='/' element={<Home />}/>
+      <Route path='/register' element={<Register />}/>
       </Route>
     </Routes>
   )

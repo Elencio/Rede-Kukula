@@ -22,6 +22,8 @@ export const Subtitle = styled.p`
   font-size: 24px;
   font-weight: normal;
   margin-bottom: 32px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
   color: #555;
 `;
 
@@ -42,32 +44,39 @@ export const Button = styled.button`
 `
 
 export const CardChallenge = styled.div`
+    padding: 1.5rem;
     margin-top: 4rem;
-    background-color: #808080;
     border-radius: 10px;
-    box-shadow: 0 0 0 1px #808080;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    box-shadow: 0 0 0 3px #808080;
     color: #000;
-   
+  
+`
 
- ;
-
+export const Information = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: center;
-    justify-content: center;
+    letter-spacing: 1.5;
     padding: 0.5rem 1rem;
 
 
      span {
        font-size: 1.1rem;
        line-height: 1.7;
-       font-family: 'Rubik', sans-serif;
+       font-family: 'Outfit', sans-serif;
+       font-weight: 300;
      }
 
      strong {
        font-size: 1.5rem;
        line-height: 1.7;
-       font-family: 'Outfit', sans-serif;
+       font-family: 'Rubik', sans-serif;
+       font-weight: 500;
      }
+`
+
+export const ImageContainer = styled.div`
 `

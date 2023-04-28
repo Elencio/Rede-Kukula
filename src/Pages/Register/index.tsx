@@ -1,4 +1,4 @@
-import { FormContainer, Overlay, OverlayContainer, OverlayFix, PrincipalContainer, } from './styles';
+import { FormContainer } from './styles';
 
 import * as zod from 'zod';
 import  { zodResolver } from '@hookform/resolvers/zod'
@@ -42,14 +42,14 @@ export function Register() {
   }
 
   return(
-    <PrincipalContainer>
+    
+   
       <FormContainer >
-        <form action="#" onSubmit={handleSubmit(registerUser)}>
-              <h1>Register sua conta</h1>
-           
+             <h1>Registe a sua conta</h1>
+              <form action="#" onSubmit={handleSubmit(registerUser)}>
               <input 
               type="text" 
-              placeholder="Name" 
+              placeholder="Nome" 
               required 
               { ...register('name')}
               />
@@ -65,7 +65,7 @@ export function Register() {
 
               <input 
               type="password" 
-              placeholder="Password" 
+              placeholder="Palavra-passe" 
               required
               {...register('password')}
               />
@@ -74,7 +74,7 @@ export function Register() {
 
               <input 
               type="text" 
-              placeholder="Address" 
+              placeholder="Endereco" 
               required 
               {...register('address')}
               />
@@ -82,7 +82,7 @@ export function Register() {
                 {errors.address && <span>{errors.address.message}</span>} 
               <input 
               type="text" 
-              placeholder="City" 
+              placeholder="Cidade" 
               required 
               {...register('city')}
               />
@@ -91,31 +91,23 @@ export function Register() {
 
               <input 
               type="text" 
-              placeholder="State" 
+              placeholder="Estado" 
               required 
               {...register('state')}
               />
                    {errors.state && <span>{errors.state.message}</span>}
               <input 
               type="text" 
-              placeholder="Zip Code" 
+              placeholder="Codigo Postal" 
               required 
               { ...register('zipCode')}
               />
 
                   {errors.zipCode && <span>{errors.zipCode.message}</span>}
-              <button>Register</button>
+              <button>Registrar</button>
 
         </form>
       </FormContainer>
-      <OverlayContainer>
-        <Overlay >
-            <OverlayFix>
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-            </OverlayFix>
-        </Overlay>
-      </OverlayContainer>
-    </PrincipalContainer>
+  
   )
 }  
