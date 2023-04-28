@@ -6,11 +6,12 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f9f9f9;
+  padding: 4rem;
+
 `;
 
 export const Title = styled.h1`
+  font-family: 'Outfit', sans-serif;
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 16px;
@@ -25,7 +26,8 @@ export const Subtitle = styled.p`
 `;
 
 export const Button = styled.button`
-  padding: 16px 32px;
+  width: 234px;
+  height: 43px;
   font-size: 20px;
   font-weight: bold;
   border-radius: 8px;
@@ -37,36 +39,35 @@ export const Button = styled.button`
   &:hover {
     background-color: #ffba42;
   }
-`;
+`
 
-export const Input = styled.input`
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 2rem;
-`;
+export const CardChallenge = styled.div`
+    margin-top: 4rem;
+    background-color: #808080;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #808080;
+    color: #000;
+   
 
-export const Textarea = styled.textarea`
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  height: 10rem;
-  margin-bottom: 2rem;
-`;
+ ;
 
-export const Label = styled.label`
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-`;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
 
-export const Checkbox = styled.input`
-  margin-right: 1rem;
-`;
 
-export const CheckboxLabel = styled.label`
-  font-size: 1.5rem;
-  color: #555;
-`;
+     span {
+       font-size: 1.1rem;
+       line-height: 1.7;
+       font-family: 'Rubik', sans-serif;
+     }
+
+     strong {
+       font-size: 1.5rem;
+       line-height: 1.7;
+       font-family: 'Outfit', sans-serif;
+     }
+`

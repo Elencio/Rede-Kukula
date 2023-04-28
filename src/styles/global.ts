@@ -10,4 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     --moz-osx-font-smoothing: grayscale;
   }
 
+  body {
+      font-family: 'Roboto' sans-serif;
+      background-color: #f9f9f9;
+  }
+
 `
