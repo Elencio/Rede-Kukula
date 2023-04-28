@@ -88,7 +88,7 @@ export const Challenges: propsChallenges[] = [
     id:14,
     title: 'Desafios de intimidade',
     description:'Escreva uma carta para o seu parceiro(a) descrevendo uma fantasia que você tem. Planejem uma noite romântica juntos, colocando velas e música suave. Explorem diferentes formas de toque e carinho, sem pressa. Façam uma lista juntos de suas fantasias sexuais e escolham uma para experimentá-la juntos',
-    rules: ['Estabeleçam limites claros antes de começar', 'Certifiquem-se de que ambos estão confortáveis com a atividade', 'Comunicar-se abertamente sobre o que gostam e o que não gostam',  'Respeitem os limites do outro e parem imediatamente se alguém se sentir desconfortável']
+    rules: ['Estabeleçam limites claros antes de começar', 'Certifiquem-se de que ambos estão confortáveis com a atividade', 'Comunicar-se abertamente sobre o que gostam e o que não gostam']
    }
    ,
    {
