@@ -1,54 +1,39 @@
-import { useState } from 'react';
-
-import { GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
-
-import { GoogleLogo, GraduationCap} from 'phosphor-react'
-
-import { FormContainer, Overlay, OverlayContainer, OverlayFix, PrincipalContainer, SocialContainer } from './styles';
-
-import { auth } from '../../services/firebase';
+import { ArrowRight } from "phosphor-react";
+import { LoginContainer, LogoTitle, LoginInformation, Options } from "./styles";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthGoogleContext";
+import { Navigate } from "react-router-dom";
 
 
-export function Login() {
-  
-  const [userdata, setUserData] = useState<User>({} as User);
+export function Login(){
 
- function handleEntrarUsandoGoogle(){
-   const provider = new GoogleAuthProvider();
+  const { SignInwithGoogle, signed } = useContext(AuthContext)
 
-   signInWithPopup( auth, provider).then((result) => {
-       setUserData(result.user)
-   }).catch((error) => {
-    console.log('Alguma Coisa Nao correr bem')
-   }
-   )
- }
+  if(signed) {
+    return <Navigate to='/usuario'/>
+  }
 
   return(
-    <PrincipalContainer>
-      <FormContainer >
-        <form action="#">
-              <h1>Rede Kukula</h1>
-              <SocialContainer onClick={handleEntrarUsandoGoogle}>
-                <span>Entrar com google</span>
-                <GoogleLogo size={24}  weight='fill'/>
-              </SocialContainer>
-              <span>ou usa a sua conta</span>
-              <input type="email" placeholder="Email" required />
-              <input type="password" placeholder="Password" required />
-              <a href="#">esqueceu sua senha?</a>
-              <button>Entrar</button>
+    <LoginContainer>
+      <LogoTitle>
+        Couplegame
+      </LogoTitle>
+      <LoginInformation>
+        <form action="">
+           <strong onClick={SignInwithGoogle}>Entrar com Google</strong>
+           <input type="text" placeholder="informe seu email"/>
+           <input type="password" placeholder="insira o seu password" />
+           <Options>
+          <span>Esqueceu a senha</span>
+          <span>Registrar
+            < ArrowRight size={22}/>
+          </span>
+           </Options>
+           <button type="submit">Entrar</button>
         </form>
-      </FormContainer>
-      <OverlayContainer>
-        <Overlay >
-            <OverlayFix>
-              <GraduationCap size={88} weight="fill" />
-              <h1>Bem vindo! A Rede Kukula Pabhodzi</h1>
-              <p>Junte-se a um conjuntos de Estudantes que buscam e sonham com um futuro melhor. Juntos crescemos e fazemos diferença </p>
-            </OverlayFix>
-        </Overlay>
-      </OverlayContainer>
-    </PrincipalContainer>
+
+        
+      </LoginInformation>
+    </LoginContainer>
   )
-}  
+}

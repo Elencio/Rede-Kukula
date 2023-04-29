@@ -5,9 +5,8 @@ export function Header(){
   return(
     <HeaderContainer>
       <strong>Couplegame</strong>
-
-      <NavLink to='/register'>
-      <span>Registre-se para aproveitar mais</span>
+      <NavLink to='/login'>
+      <span>faca o login</span>
       </NavLink>
     </HeaderContainer>
   )
